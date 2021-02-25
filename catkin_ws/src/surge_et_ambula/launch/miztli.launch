@@ -1,0 +1,21 @@
+<launch>
+
+
+    <group ns="hardware">
+	<node name="mobile_base" pkg="mobile_base" type="hexa_base_node" output="screen">
+	  <param name="port1" value="/dev/justinaRC30"/>
+	  <param name="port2" value="/dev/justinaRC15"/>
+	</node>
+
+	<node name="urg_node" pkg="urg_node" type="urg_node"/>
+	<node name="joy" pkg="joy" type="joy_node" output="screen"/>
+	<node name="camera_node" pkg="camera" type="camera_node"/>
+    </group>
+
+    <group ns="interoperation">
+	<node name="joystick_teleop" pkg="joystick_teleop" type="joystick_logitech.py" output="screen"/>
+    </group>
+</launch>
+
+
+
